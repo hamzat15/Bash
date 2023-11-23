@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "1.cree un utilisateur "
+echo "2.changer le mdp d'un utilisateur"
+echo "3.bloquer le mdp d'un utilisateur"
+echo "4.sauvegarder le dossier utilisateur"
+
+read a
+
+
+case $a in
+	1) echo $a;;
+
+	2) read -p "entrer le nom de l'utilisateur" name
+	if [ -z $name ]
+	then
+	$(passwd $name)
+	fi
+	3) echo $a;;
+	4) echo $a;;
+	*) echo "Operation annule"
+             exit;;
+esac
